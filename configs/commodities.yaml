@@ -1,0 +1,49 @@
+# USDA PSD commodity codes and attribute IDs for grain supply forecasting
+
+commodities:
+  wheat:
+    code: "0410000"
+    description: "Wheat"
+    unit: "1000 MT"
+  corn:
+    code: "0440000"
+    description: "Corn"
+    unit: "1000 MT"
+  rice:
+    code: "0422110"
+    description: "Rice, Milled"
+    unit: "1000 MT"
+
+# Balance sheet attribute IDs from PSD
+attributes:
+  balance_sheet:
+    beginning_stocks: "020"
+    production: "028"
+    imports: "057"
+    domestic_consumption: "125"
+    exports: "088"
+    ending_stocks: "176"
+    total_supply: "086"
+    total_distribution: "178"
+  supplementary:
+    area_harvested: "004"
+    yield: "184"
+    feed_consumption: "130"
+    fsi_consumption: "192"
+
+# Target variables for modeling
+targets:
+  - ending_stocks
+  - total_supply
+
+# PSD data source
+psd:
+  bulk_csv_url: "https://apps.fas.usda.gov/psdonline/downloads/psd_grains_pulses_csv.zip"
+  cache_days: 30
+
+# WASDE data source
+wasde:
+  base_url: "https://downloads.usda.library.cornell.edu/usda-esmis/files/3t945q76s"
+  file_pattern: "wasde{mm}{yy}.xls"
+  start_year: 2012
+  end_year: 2026
