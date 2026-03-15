@@ -38,20 +38,20 @@ features:
 features-dev:
 	$(PYTHON) scripts/04_engineer_features.py --commodities wheat
 
-# --- Modeling (future phases) ---
+# --- Modeling ---
 sarima:
 	$(PYTHON) scripts/05_train_sarima.py --all
 
 sarima-dev:
-	$(PYTHON) scripts/05_train_sarima.py --commodities wheat --max-years 20
+	$(PYTHON) scripts/05_train_sarima.py --commodities wheat
 
 xgboost:
 	$(PYTHON) scripts/06_train_xgboost.py --all
 
 xgboost-dev:
-	$(PYTHON) scripts/06_train_xgboost.py --commodities wheat --max-years 20
+	$(PYTHON) scripts/06_train_xgboost.py --commodities wheat
 
-# --- Evaluation & Visualization (future phases) ---
+# --- Evaluation & Visualization ---
 evaluate:
 	$(PYTHON) scripts/07_evaluate.py
 
